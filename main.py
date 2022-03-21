@@ -8,7 +8,7 @@ from tkinter import ttk
 # ____________   FUNCTIONS ________________
 def find_age(d, m, y):
     # find the age ( difference between current and date of birth )
-    age = today.year-y-((today.month, today.day)<(m,d))
+    age = today.xside-y-((today.shape, today.day)<(m,d))
     return age
 def display_calc_age(age):
     tbox_age.config(state='normal')
@@ -18,27 +18,27 @@ def display_calc_age(age):
     tbox_age.config(state='disabled')
 def validation():
   # gets the three entries
-  d = e_date.get()
-  m = month_chosen.current()
-  #m = e_month.get()
-  y = e_year.get()
+  d = e_yrside.get()
+  m = shape_chosen.current()
+  #m = e_shape.get()
+  y = e_xside.get()
   msg = ''
   if len(d) == 0 or len (y) == 0:
-      msg = 'day, month and year can\'t be empty'
+      msg = 'day, shape and xside can\'t be empty'
   else:
     try:
       if any(ch.isdigit() for ch in d) == False:
         msg = 'day must be a NUMBER'
       elif m == 0:
-        msg = 'choose an appropriate MONTH'
+        msg = 'choose an appropriate SHAPE'
       elif any(ch.isdigit() for ch in y) == False:
-        msg = 'year must be a NUMBER'
+        msg = 'xside must be a NUMBER'
       else:
        # msg = 'Success!'
         day = int(d)
-        month = m #month is already in number from list position
-        year = int(y)
-        calc_age = find_age(day, month, year)
+        shape = m #shape is already in number from list position
+        xside = int(y)
+        calc_age = find_age(day, shape, xside)
         display_calc_age(calc_age)
             
     except Exception as ep:
@@ -49,7 +49,7 @@ def validation():
 def exit():
     window.destroy()
 # ____________   MAIN  ________________
-# Create a object which stores today’s whole date using datetime function
+# Create a object which stores today’s whole yrisde using datetime function
 today = date.today()
 # Creating a custom window
 window = tk.Tk()
@@ -65,31 +65,31 @@ window.title('Area Perimeter Calculator')
 lb_heading = tk.Label(window,text="Area Perimeter Calcualtor",font=("Arial", 20),fg="black",bg="#c7d6f5")
 lb_subheading = tk.Label(window,font=("Arial",12),text="Input shape and numbers",fg="black",bg="#c7d6f5")
  
-# Labels for date, month and year
-lb_month = tk.Label(window,text = "Shape: ",font=('Arial',12,"bold"),fg="#000000",bg="#c7d6f5")
+# Labels for yrside, shape and xside
+lb_shape = tk.Label(window,text = "Shape: ",font=('Arial',12,"bold"),fg="#000000",bg="#c7d6f5")
 lb_ap = tk.Label(window,text = "Area Or Perimeter ",font=
 ('Arial',12,"bold"),fg="#000000",bg="#c7d6f5")
-lb_date = tk.Label(window,text = "y/(r) Side:",font=('Arial',12,"bold"),fg="#000000",bg="#c7d6f5")
-lb_year = tk.Label(window,text = "x Side:",font=('Arial',12,"bold"),fg="#000000",bg="#c7d6f5")
-# Entry boxes for date, month and year
-e_date = tk.Entry(window,width=5)
+lb_yrside = tk.Label(window,text = "y/(r) Side:",font=('Arial',12,"bold"),fg="#000000",bg="#c7d6f5")
+lb_xside = tk.Label(window,text = "x Side:",font=('Arial',12,"bold"),fg="#000000",bg="#c7d6f5")
+# Entry boxes for yrside, shape and xside
+e_yrside = tk.Entry(window,width=5)
 
 # Combobox creation
 n = tk.StringVar()
-month_chosen = ttk.Combobox(window, textvariable = n, width=14)
+shape_chosen = ttk.Combobox(window, textvariable = n, width=14)
 
 
 # Adding combobox drop down list
 
-month_chosen['values'] = ('Select a shape...', 
+shape_chosen['values'] = ('Select a shape...', 
                           'Square', 
                           'Circle',
                           'Triangle',
                           'Parallelogram')
-# Shows Select a month as a default value
-month_chosen.current(0)
-#e_month = tk.Entry(window,width=5)
-e_year = tk.Entry(window,width=5)
+# Shows Select a shape as a default value
+shape_chosen.current(0)
+#e_shape = tk.Entry(window,width=5)
+e_xside = tk.Entry(window,width=5)
 # Button to calculate age 
 btn_calculate_age = tk.Button(window,text="Calculate area/perimeter",font=("Arial",13), command=validation)
  
@@ -106,13 +106,13 @@ btn_exit = tk.Button(window,text="Exit Application!",font=("Arial",13),command=e
 lb_heading.place(x=70,y=5)
 lb_subheading.place(x=10,y=40)
 lb_ap.place(x=20,y=150)
-lb_month.place(x=20,y=105)
-lb_date.place(x=20,y=80)
-lb_year.place(x=20,y=130)
-e_date.place(x=120,y=80)
-#e_month.place(x=120,y=105)
-month_chosen.place(x=120,y=105)
-e_year.place(x=120,y=130)
+lb_shape.place(x=20,y=105)
+lb_yrside.place(x=20,y=80)
+lb_xside.place(x=20,y=130)
+e_yrside.place(x=120,y=80)
+#e_shape.place(x=120,y=105)
+shape_chosen.place(x=120,y=105)
+e_xside.place(x=120,y=130)
 btn_calculate_age.place(x=30,y=170)
 lb_calculated_age.place(x=230,y=70)
 tbox_age.place(x=350,y=100)
