@@ -6,11 +6,11 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import ttk
 # ____________   FUNCTIONS ________________
-def find_age(d, m, y):
+def find_ap(d, m, y):
     # find the age ( difference between current and date of birth )
     age = today.xside-y-((today.shape, today.day)<(m,d))
     return age
-def display_calc_age(age):
+def display_calc_ap(age):
     tbox_age.config(state='normal')
     #age calculated is inserted into the text box after clearing the previous info in the textbox. 
     tbox_age.delete('1.0', tk.END)
@@ -38,8 +38,8 @@ def validation():
         day = int(d)
         shape = m #shape is already in number from list position
         xside = int(y)
-        calc_age = find_age(day, shape, xside)
-        display_calc_age(calc_age)
+        calc_age = find_ap(day, shape, xside)
+        display_calc_ap(calc_age)
             
     except Exception as ep:
       messagebox.showerror('error', ep)
@@ -88,6 +88,19 @@ shape_chosen['values'] = ('Select a shape...',
                           'Parallelogram')
 # Shows Select a shape as a default value
 shape_chosen.current(0)
+
+n = tk.StringVar()
+form_chosen = ttk.Combobox(window, textvariable = n, width=14)
+
+
+# Adding combobox drop down list
+
+form_chosen['values'] = ('Area or Perimeter...', 
+                          'Perimeter', 
+                          'Area')
+# Shows Select a shape as a default value
+form_chosen.current(0)
+
 #e_shape = tk.Entry(window,width=5)
 e_xside = tk.Entry(window,width=5)
 # Button to calculate age 
@@ -106,14 +119,15 @@ btn_exit = tk.Button(window,text="Exit Application!",font=("Arial",13),command=e
 lb_heading.place(x=70,y=5)
 lb_subheading.place(x=10,y=40)
 lb_ap.place(x=20,y=150)
-lb_shape.place(x=20,y=105)
-lb_yrside.place(x=20,y=80)
+lb_shape.place(x=20,y=80)
+lb_yrside.place(x=20,y=105)
 lb_xside.place(x=20,y=130)
-e_yrside.place(x=120,y=80)
+e_yrside.place(x=120,y=105)
 #e_shape.place(x=120,y=105)
-shape_chosen.place(x=120,y=105)
+shape_chosen.place(x=120,y=80)
+form_chosen.place(x=35,y=175)
 e_xside.place(x=120,y=130)
-btn_calculate_age.place(x=30,y=170)
-lb_calculated_age.place(x=230,y=70)
+btn_calculate_age.place(x=30,y=225)
+lb_calculated_age.place(x=300,y=70)
 tbox_age.place(x=350,y=100)
 btn_exit.place(x=300,y=170)
