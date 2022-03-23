@@ -62,7 +62,7 @@ window.title('Area Perimeter Calculator')
 
 
 # Labels for Heading and Subheadng of GUI
-lb_heading = tk.Label(window,text="Area Perimeter Calcualtor",font=("Arial", 20),fg="black",bg="#c7d6f5")
+lb_heading = tk.Label(window,text="Area Perimeter Calculator",font=("Arial", 20),fg="black",bg="#c7d6f5")
 lb_subheading = tk.Label(window,font=("Arial",12),text="Input shape and numbers",fg="black",bg="#c7d6f5")
  
 # Labels for yrside, shape and xside
@@ -107,7 +107,7 @@ e_xside = tk.Entry(window,width=5)
 btn_calculate_age = tk.Button(window,text="Calculate area/perimeter",font=("Arial",13), command=validation)
  
 # Label for text box that will display the calculated age
-lb_calculated_age = tk.Label(window,text="The Calculated area/perimeter is ",font=('Arial',12,"bold"),fg="#000000",bg="#c7d6f5")
+lb_calculated_age = tk.Label(window,text="The calculated area/perimeter is",font=('Arial',12,"bold"),fg="#000000",bg="#c7d6f5")
 tbox_age=tk.Text(window,width=3,height=0,state="disabled",bg="#99ade6",font=('Arial',24,"bold"))
 
 # Button to exit application
@@ -116,18 +116,18 @@ btn_exit = tk.Button(window,text="Exit Application!",font=("Arial",13),command=e
 
 
 # Placing the elements on the screen
-lb_heading.place(x=70,y=5)
-lb_subheading.place(x=10,y=40)
-lb_ap.place(x=20,y=150)
-lb_shape.place(x=20,y=80)
-lb_yrside.place(x=20,y=105)
-lb_xside.place(x=20,y=130)
-e_yrside.place(x=120,y=105)
+lb_heading.place(x=180,y=5)
+lb_subheading.place(x=20,y=50)
+lb_ap.place(x=20,y=200)
+lb_shape.place(x=20,y=110)
+lb_yrside.place(x=20,y=140)
+lb_xside.place(x=20,y=170)
+e_yrside.place(x=120,y=140)
 #e_shape.place(x=120,y=105)
-shape_chosen.place(x=120,y=80)
-form_chosen.place(x=35,y=175)
-e_xside.place(x=120,y=130)
-btn_calculate_age.place(x=30,y=225)
-lb_calculated_age.place(x=300,y=70)
-tbox_age.place(x=350,y=100)
-btn_exit.place(x=300,y=170)
+shape_chosen.place(x=120,y=110)
+form_chosen.place(x=35,y=225)
+e_xside.place(x=120,y=170)
+btn_calculate_age.place(x=30,y=300)
+lb_calculated_age.place(x=310,y=70)
+tbox_age.place(x=425,y=100)
+btn_exit.place(x=500,y=350)
