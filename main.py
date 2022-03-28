@@ -8,14 +8,14 @@ from tkinter import ttk
 # ____________   FUNCTIONS ________________
 def find_ap(d, m, y):
     # find the age ( difference between current and date of birth )
-    age = today.xside-y-((today.shape, today.day)<(m,d))
-    return age
-def display_calc_ap(age):
-    tbox_age.config(state='normal')
+    ap = today.xside-y-((today.shape, today.day)<(m,d))
+    return ap
+def display_calc_ap(ap):
+    tbox_ap.config(state='normal')
     #age calculated is inserted into the text box after clearing the previous info in the textbox. 
-    tbox_age.delete('1.0', tk.END)
-    tbox_age.insert(tk.END,age)
-    tbox_age.config(state='disabled')
+    tbox_ap.delete('1.0', tk.END)
+    tbox_ap.insert(tk.END,ap)
+    tbox_ap.config(state='disabled')
 def validation():
   # gets the three entries
   d = e_yrside.get()
@@ -38,8 +38,8 @@ def validation():
         day = int(d)
         shape = m #shape is already in number from list position
         xside = int(y)
-        calc_age = find_ap(day, shape, xside)
-        display_calc_ap(calc_age)
+        calc_ap = find_ap(day, shape, xside)
+        display_calc_ap(calc_ap)
             
     except Exception as ep:
       messagebox.showerror('error', ep)
@@ -76,7 +76,7 @@ e_yrside = tk.Entry(window,width=5)
 
 # Combobox creation
 n = tk.StringVar()
-shape_chosen = ttk.Combobox(window, textvariable = n, width=14)
+shape_chosen = ttk.Combobox(window, textvariable = n, width=14, state="readonly")
 
 
 # Adding combobox drop down list
@@ -90,7 +90,7 @@ shape_chosen['values'] = ('Select a shape...',
 shape_chosen.current(0)
 
 n = tk.StringVar()
-form_chosen = ttk.Combobox(window, textvariable = n, width=14)
+form_chosen = ttk.Combobox(window, textvariable = n, width=14, state="readonly")
 
 
 # Adding combobox drop down list
@@ -104,11 +104,11 @@ form_chosen.current(0)
 #e_shape = tk.Entry(window,width=5)
 e_xside = tk.Entry(window,width=5)
 # Button to calculate age 
-btn_calculate_age = tk.Button(window,text="Calculate area/perimeter",font=("Arial",13), command=validation)
+btn_calculate_ap = tk.Button(window,text="Calculate area/perimeter",font=("Arial",13), command=validation)
  
 # Label for text box that will display the calculated age
-lb_calculated_age = tk.Label(window,text="The calculated area/perimeter is",font=('Arial',12,"bold"),fg="#000000",bg="#c7d6f5")
-tbox_age=tk.Text(window,width=3,height=0,state="disabled",bg="#99ade6",font=('Arial',24,"bold"))
+lb_calculated_ap = tk.Label(window,text="The calculated area/perimeter is",font=('Arial',12,"bold"),fg="#000000",bg="#c7d6f5")
+tbox_ap=tk.Text(window,width=3,height=0,state="disabled",bg="#99ade6",font=('Arial',24,"bold"))
 
 # Button to exit application
 btn_exit = tk.Button(window,text="Exit Application!",font=("Arial",13),command=exit)
@@ -127,7 +127,7 @@ e_yrside.place(x=120,y=140)
 shape_chosen.place(x=120,y=110)
 form_chosen.place(x=35,y=225)
 e_xside.place(x=120,y=170)
-btn_calculate_age.place(x=30,y=300)
-lb_calculated_age.place(x=310,y=70)
-tbox_age.place(x=425,y=100)
+btn_calculate_ap.place(x=30,y=350)
+lb_calculated_ap.place(x=310,y=70)
+tbox_ap.place(x=425,y=100)
 btn_exit.place(x=500,y=350)
