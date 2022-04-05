@@ -5,12 +5,33 @@
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import ttk
+
+
+
+#from PIL import ImageTk, Image
+
 # ____________   FUNCTIONS ________________
-def find_ap(s, a, b, c):
+
+def pop():
+  window.destroy()
+  exec(open('gui1.py').read())
   
-    # find the a/p
-    ap = today.bside-x-((today.shape, today.day)<(s,y))
-    return ap
+def find_ap (shape, aside, bside, cside):
+
+    # gets the five entries
+  s = shape_chosen.current()
+  a = e_aside.get()
+  b = e_bside.get()
+  c = e_cside.get()
+  f = form_chosen.current()
+  
+  # all formulas for area
+  if s == 'Circle':
+    print(
+      "circle"
+    )
+      
+    
 def display_calc_ap(ap):
     tbox_ap.config(state='normal')
     #a/p calculated is inserted into the text box after clearing the previous info in the textbox. 
@@ -18,11 +39,13 @@ def display_calc_ap(ap):
     tbox_ap.insert(tk.END,ap)
     tbox_ap.config(state='disabled')
 def validation():
-  # gets the three entries
+  # gets the five entries
   s = shape_chosen.current()
   a = e_aside.get()
   b = e_bside.get()
   c = e_cside.get()
+  f = form_chosen.current()
+  
   msg = ''
   if len(a) == 0 or len (b) == 0 or len (c) == 0:
       msg = 'aside, shape and bside can\'t be empty'
@@ -42,6 +65,11 @@ def validation():
         aside = int(a)
         bside = int(b)
         cside = int(c)
+
+        if f == 'Area':
+          print("Area Chosen")
+        elif f == 'Perimeter':
+          print("Perimeter Chosen")      
         calc_ap = find_ap(shape, aside, bside, cside)
         display_calc_ap(calc_ap)
             
@@ -61,7 +89,6 @@ window.geometry("700x400")
 window.config(bg="#c7d6f5")
 window.resizable(width=False,height=False)
 window.title('Area Perimeter Calculator')
-
 
 
 
@@ -108,8 +135,16 @@ form_chosen['values'] = ('Area or Perimeter...',
 # Shows Select a shape as a default value
 form_chosen.current(0)
 
+# Create an object of tkinter ImageTk
+#img = ImageTk.PhotoImage(Image.open("nathan.png"))
+
+# Create a Label Widget to display the text or Image
+#label = Label(window, image = img)
+#label.pack()
+
+
 # Button to calculate age 
-btn_calculate_ap = tk.Button(window,text="Calculate area/perimeter",font=("Arial",13), command=validation)
+btn_calculate_ap = tk.Button(window,text="Calculate area/perimeter",font=("Arial",13), command=pop)
  
 # Label for text box that will display the calculated age
 lb_calculated_ap = tk.Label(window,text="The calculated area/perimeter is",font=('Arial',12,"bold"),fg="#000000",bg="#c7d6f5")
