@@ -60,12 +60,7 @@ window.config(bg="#c7d6f5")
 window.resizable(width=False,height=False)
 window.title('Area Perimeter Calculator')
 
-root = Tk()      
-canvas = Canvas(root, width = 300, height = 300)      
-canvas.pack()      
-img = PhotoImage(file="ball.ppm")      
-canvas.create_image(20,20, anchor=NW, image=img)      
-mainloop() 
+
 
 # Labels for Heading and Subheadng of GUI
 lb_heading = tk.Label(window,text="Area Perimeter Calculator",font=("Arial", 20),fg="black",bg="#c7d6f5")
