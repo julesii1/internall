@@ -1,12 +1,12 @@
 from tkinter import *
 import tkinter as trik
 
-def calculate_area():
+def calculate_perimeter():
 	aside = float(entry1.get())
 	bside = float(entry2.get())
 	cside = float(entry3.get())
   perimeter = aside + bside + cside
-	output_label.configure(text = ' Perimeter of Triangle= {:.2f} ' .format(area))
+	output_label.configure(text = ' Perimeter of Triangle= {:.2f} ' .format(perimeter))
 
 def back():
   exec(open('main.py').read())
@@ -24,11 +24,11 @@ ptriangle_window.title('Python GUI TUTORIALS')
 message_label1 = trik.Label(text= 'Enter a side: ' ,font=( ' Verdana ' , 18))
 message_label2 = trik.Label(text= ' Enter b side: ' ,font=( ' Verdana ' , 18))
 message_label2 = trik.Label(text= ' Enter c side: ' ,font=( ' Verdana ' , 18))
-output_label = trik.Label(font=( ' Verdana ' , 18), text='Area of Triangle is:')
+output_label = trik.Label(font=( ' Verdana ' , 18), text='Perimeter of Triangle is:')
 entry1 = trik.Entry(font=( ' Verdana ' , 18), width=6)
 entry2 = trik.Entry(font=( ' Verdana ' , 18), width=6)
 entry3 = trik.Entry(font=( ' Verdana ' , 18), width=6)
-calc_button = trik.Button(text= ' Calculate Area ' , font=( ' Verdana ' , 16),command=calculate_area)
+calc_button = trik.Button(text= ' Calculate Area ' , font=( ' Verdana ' , 16),command=calculate_perimeter)
 back_button = trik.Button(ptriangle_window,text="Go Back!",font=("Arial",13),command=back)
 
 

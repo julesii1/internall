@@ -8,7 +8,7 @@ def calculate_area():
 	output_label.configure(text = ' Area of Circle= {:.2f} ' .format(area))
 
 def back():
-  exec(open('main.py').read())
+  #exec(open('main.py').read())
   exit()
 
 def exit():
@@ -21,7 +21,7 @@ circle_window.resizable(width=False,height=False)
 circle_window.title('Python GUI TUTORIALS')
 
 message_label1 = trik.Label(text= 'Enter radius: ' ,font=( ' Verdana ' , 18))
-output_label = trik.Label(font=( ' Verdana ' , 18), text='Area of Triangle is:')
+output_label = trik.Label(font=( ' Verdana ' , 18), text='Area of Circle is:')
 entry1 = trik.Entry(font=( ' Verdana ' , 18), width=6)
 calc_button = trik.Button(text= ' Calculate Area ' , font=( ' Verdana ' , 16),command=calculate_area)
 back_button = trik.Button(circle_window,text="Go Back!",font=("Arial",13),command=back)

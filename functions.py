@@ -1,0 +1,24 @@
+def get_circle_perimeter(r):
+  perimeter = 23.14*r
+  print("Perimeter of Circle: ",perimeter)
+
+def get_circle_area(r):
+  area = 3.14*r*r
+  print("Area of Circle: ",area)
+
+def get_triangle_area(b,h):
+  area=0.5*b*h
+  print("Area of Triangle : ",area)
+
+
+def get_triangle_perimeter(a,b,c):
+  perimeter=a + b + c
+  print("Perimeter of Triangle : ",perimeter)
+
+def get_rec_square_area(l,b):
+  area = l * b
+  print("Area of Rectangle : ",area)
+
+def get_rec_square_perimeter(l,b,w):
+  perimeter = 2*(l+w)
+  print("Perimeter of Rectangle : ",perimeter)
