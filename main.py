@@ -29,36 +29,116 @@ def find_ap():
             # all formulas for area
             if s == 1:
                 print("Square")
+
                 #pop('aos.py')
                 if a_p == 1:  #perimeter
                     print(a_p)
+
+                    print("perimeter of a Square")
+                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    length = sd.askfloat('User Input',
+                                         'Enter the WIDTH of square:',
+                                         **options)
+                    height = sd.askfloat('User Input',
+                                         'Enter the HEIGHT of square:',
+                                         **options)
+                    get_rec_square_perimeter(length, height)
                     #enter height
                     #enter width
                 else:
                     #area
                     print("area of square")
+                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    length = sd.askfloat('User Input',
+                                         'Enter the WIDTH of square:',
+                                         **options)
+                    height = sd.askfloat('User Input',
+                                         'Enter the HEIGHT of square:',
+                                         **options)
+                    get_rec_square_area(length, height)
                 break
             elif s == 2:
                 print("Circle")
                 #pop('aoc.py')
                 if a_p == 1:  #perimeter
                     print(a_p)
+                    print("perimeter of circle")
+                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    userInput = sd.askfloat('User Input',
+                                            'Enter the Radius of circle:',
+                                            **options)
+                    get_circle_perimeter(userInput)
                 elif a_p == 2:
+
                     #area
-                  #https://stackoverflow.com/questions/51394482/is-it-possible-to-display-python-input-statements-in-tkinter
+                    #https://stackoverflow.com/questions/51394482/is-it-possible-to-display-python-input-statements-in-tkinter
+                    print(a_p)
                     print("area of circle")
-                    options = {'minvalue':3.0,'maxvalue':10.0}
-                    userInput = sd.askfloat('User Input','Enter the Radius of circle:',**options)
+                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    userInput = sd.askfloat('User Input',
+                                            'Enter the Radius of circle:',
+                                            **options)
                     get_circle_area(userInput)
                     #r=sd.askstring("Enter the Radius of circle: ")
                     #circle_area(r)
                 else:
-                  print("test")
+                    print("test")
                 break
 
-            elif s == 3:
+            elif s == 3:  #watch indentation Jules - working my side now!
                 print("Triangle")
-                #pop('aot.py')
+                if a_p == 1:
+
+                    print("perimeter of triangle")
+                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    length = sd.askfloat(
+                        'User Input', 'Enter the Bottom value of triangle:',
+                        **options)
+                    height = sd.askfloat('User Input',
+                                         'Enter the Side value of triangle:',
+                                         **options)
+                    get_triangle_perimeter(length, height)
+
+                else:
+
+                    print("area of triangle")
+                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    base = sd.askfloat('User Input',
+                                       'Enter the WIDTH of triangle:',
+                                       **options)
+                    height = sd.askfloat('User Input',
+                                         'Enter the HEIGHT of triangle:',
+                                         **options)
+                    get_triangle_area(base, height)
+                break
+            elif s == 4:  
+                print("Parallelogram")
+                if a_p == 2:
+
+                    print("perimeter of parallelogram")
+                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    length = sd.askfloat(
+                        'User Input', 'Enter the LENGTH of parallelogram:',
+                        **options)
+                    height = sd.askfloat('User Input',
+                                         'Enter the HEIGHT of parallelogram:',
+                                         **options)
+                    get_rec_parallelogram_perimeter(length, height)
+
+                if a_p == 1:
+
+                    print("area of parallelogram")
+                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    base = sd.askfloat('User Input',
+                                       'Enter the LENGTH of parallelogram:',
+                                       **options)
+                    height = sd.askfloat('User Input',
+                                         'Enter the HEIGHT of parallelogram:',
+                                         **options)
+                    get_rec_parallelogram_area(base, height)
+                break
+
+        #pop('aot.py')
 
         except ValueError:
             print("Goodbye")
@@ -163,6 +243,7 @@ lb_calculated_ap = tk.Label(window,
                             font=('Arial', 12, "bold"),
                             fg="#000000",
                             bg="#c7d6f5")
+
 tbox_ap = tk.Text(window,
                   width=3,
                   height=0,
@@ -185,7 +266,7 @@ lb_shape.place(x=20, y=110)
 #e_shape.place(x=120,y=105)
 shape_chosen.place(x=120, y=110)
 form_chosen.place(x=205, y=150)
-btn_calculate_ap.place(x=30, y=350)
+btn_calculate_ap.place(x=30, y=200)
 lb_calculated_ap.place(x=310, y=70)
 tbox_ap.place(x=425, y=100)
-btn_exit.place(x=500, y=350)
+btn_exit.place(x=400, y=200)
