@@ -91,13 +91,16 @@ def find_ap():
 
                     print("Perimeter of triangle")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
-                    length = sd.askfloat(
+                    length1 = sd.askfloat(
                         'User Input', 'Enter the Bottom value of triangle:',
+                        **options)
+                    length2 = sd.askfloat(
+                        'User Input', 'Enter the Side 2 value of triangle:',
                         **options)
                     height = sd.askfloat('User Input',
                                          'Enter the Side value of triangle:',
                                          **options)
-                    get_triangle_perimeter(length, height)
+                    get_triangle_perimeter(length1, length2, height)
 
                 else:
 

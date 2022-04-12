@@ -10,9 +10,8 @@ def get_triangle_area(l,h):
   area=0.5*l*h
   print("Area of Triangle : ",area)
 
-
-def get_triangle_perimeter(l,h):
-  perimeter=l + h
+def get_triangle_perimeter(l1,l2,h):
+  perimeter=l1 +l2 + h
   print("Perimeter of Triangle : ",perimeter)
 
 def get_rec_square_area(l,b):
