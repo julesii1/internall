@@ -34,7 +34,7 @@ def find_ap():
                 if a_p == 1:  #perimeter
                     print(a_p)
 
-                    print("perimeter of a Square")
+                    print("Perimeter of a Square")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     length = sd.askfloat('User Input',
                                          'Enter the WIDTH of square:',
@@ -47,7 +47,7 @@ def find_ap():
                     #enter width
                 else:
                     #area
-                    print("area of square")
+                    print("Area of Square")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     length = sd.askfloat('User Input',
                                          'Enter the WIDTH of square:',
@@ -62,7 +62,7 @@ def find_ap():
                 #pop('aoc.py')
                 if a_p == 1:  #perimeter
                     print(a_p)
-                    print("perimeter of circle")
+                    print("Perimeter of Circle")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     userInput = sd.askfloat('User Input',
                                             'Enter the Radius of circle:',
@@ -73,7 +73,7 @@ def find_ap():
                     #area
                     #https://stackoverflow.com/questions/51394482/is-it-possible-to-display-python-input-statements-in-tkinter
                     print(a_p)
-                    print("area of circle")
+                    print("Area of Circle")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     userInput = sd.askfloat('User Input',
                                             'Enter the Radius of circle:',
@@ -89,7 +89,7 @@ def find_ap():
                 print("Triangle")
                 if a_p == 1:
 
-                    print("perimeter of triangle")
+                    print("Perimeter of triangle")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     length = sd.askfloat(
                         'User Input', 'Enter the Bottom value of triangle:',
@@ -101,7 +101,7 @@ def find_ap():
 
                 else:
 
-                    print("area of triangle")
+                    print("Area of Triangle")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     base = sd.askfloat('User Input',
                                        'Enter the WIDTH of triangle:',
@@ -115,7 +115,7 @@ def find_ap():
                 print("Parallelogram")
                 if a_p == 2:
 
-                    print("perimeter of parallelogram")
+                    print("Perimeter of Parallelogram")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     length = sd.askfloat(
                         'User Input', 'Enter the LENGTH of parallelogram:',
@@ -127,7 +127,7 @@ def find_ap():
 
                 if a_p == 1:
 
-                    print("area of parallelogram")
+                    print("Area of Parallelogram")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     base = sd.askfloat('User Input',
                                        'Enter the LENGTH of parallelogram:',
@@ -206,12 +206,12 @@ lb_ap = tk.Label(window,
 
 # Combobox creation
 n = tk.StringVar()
-shape_chosen = ttk.Combobox(window, textvariable=n, width=14, state="readonly")
+shape_chosen = ttk.Combobox(window, textvariable=n, width=18, state="readonly")
 
 # Adding combobox drop down list
 
-shape_chosen['values'] = ('Select a shape...', 'Square', 'Circle', 'Triangle',
-                          'Parallelogram')
+shape_chosen['values'] = ('Select a shape...', 'Square/Tapawha', 'Circle/Porowhita', 'Triangle/Tapatoru',
+                          'Parallelogram/Whakarara')
 # Shows Select a shape as a default value
 shape_chosen.current(0)
 
@@ -220,7 +220,7 @@ form_chosen = ttk.Combobox(window, textvariable=n, width=14, state="readonly")
 
 # Adding combobox drop down list
 
-form_chosen['values'] = ('Area or Perimeter...', 'Perimeter', 'Area')
+form_chosen['values'] = ('Area or Perimeter...', 'Perimeter/Paenga', 'Area/Rohe')
 # Shows Select a shape as a default value
 form_chosen.current(0)
 

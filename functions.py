@@ -25,8 +25,8 @@ def get_rec_square_perimeter(l,h):
 
 def get_rec_parallelogram_area(l,b):
   area = l * b
-  print("Area of parallelogram : ",area)
+  print("Area of Parallelogram : ",area)
 
 def get_rec_parallelogram_perimeter(l,h):
   perimeter = 2*(l+h)
-  print("Perimeter of parallelogram : ",perimeter)
+  print("Perimeter of Parallelogram : ",perimeter)
