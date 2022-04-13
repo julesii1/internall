@@ -42,7 +42,7 @@ def find_ap():
                     height = sd.askfloat('User Input',
                                          'Enter the HEIGHT of square:',
                                          **options)
-                    get_rec_square_perimeter(length, height)
+                    display_calc_ap(get_rec_square_perimeter(length, height))
                     #enter height
                     #enter width
                 else:
@@ -55,7 +55,7 @@ def find_ap():
                     height = sd.askfloat('User Input',
                                          'Enter the HEIGHT of square:',
                                          **options)
-                    get_rec_square_area(length, height)
+                    display_calc_ap(get_rec_square_area(length, height))
                 break
             elif s == 2:
                 print("Circle")
@@ -67,7 +67,7 @@ def find_ap():
                     userInput = sd.askfloat('User Input',
                                             'Enter the Radius of circle:',
                                             **options)
-                    get_circle_perimeter(userInput)
+                    display_calc_ap(get_circle_perimeter(userInput))
                 elif a_p == 2:
 
                     #area
@@ -78,7 +78,7 @@ def find_ap():
                     userInput = sd.askfloat('User Input',
                                             'Enter the Radius of circle:',
                                             **options)
-                    get_circle_area(userInput)
+                    display_calc_ap(get_circle_area(userInput))
                     #r=sd.askstring("Enter the Radius of circle: ")
                     #circle_area(r)
                 else:
@@ -100,7 +100,7 @@ def find_ap():
                     height = sd.askfloat('User Input',
                                          'Enter the Side value of triangle:',
                                          **options)
-                    get_triangle_perimeter(length1, length2, height)
+                    display_calc_ap(get_triangle_perimeter(length1, length2, height))
 
                 else:
 
@@ -112,7 +112,7 @@ def find_ap():
                     height = sd.askfloat('User Input',
                                          'Enter the HEIGHT of triangle:',
                                          **options)
-                    get_triangle_area(base, height)
+                    display_calc_ap(get_triangle_area(base, height))
                 break
             elif s == 4:  
                 print("Parallelogram")
@@ -126,7 +126,7 @@ def find_ap():
                     height = sd.askfloat('User Input',
                                          'Enter the HEIGHT of parallelogram:',
                                          **options)
-                    get_rec_parallelogram_perimeter(length, height)
+                    display_calc_ap(get_rec_parallelogram_perimeter(length, height))
 
                 if a_p == 1:
 
@@ -138,7 +138,7 @@ def find_ap():
                     height = sd.askfloat('User Input',
                                          'Enter the HEIGHT of parallelogram:',
                                          **options)
-                    get_rec_parallelogram_area(base, height)
+                    display_calc_ap(get_rec_parallelogram_area(base, height))
                 break
 
         #pop('aot.py')
@@ -154,19 +154,6 @@ def display_calc_ap(ap):
     tbox_ap.delete('1.0', tk.END)
     tbox_ap.insert(tk.END, ap)
     tbox_ap.config(state='disabled')
-
-
-def validation():
-    # gets the five entries
-    s = shape_chosen.current()
-    f = form_chosen.current()
-
-    if f == 'Area':
-        print("Area Chosen")
-    elif f == 'Perimeter':
-        print("Perimeter Chosen")
-    calc_ap = find_ap("shape")
-    display_calc_ap(calc_ap)
 
 
 def exit():
