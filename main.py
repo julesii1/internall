@@ -11,30 +11,21 @@ import tkinter.simpledialog as sd
 #from PIL import ImageTk, Image
 
 # ____________   FUNCTIONS ________________
-
-
-def pop(filename):
-    exec(open(filename).read())
-
-
 def find_ap():
 
     while True:
         try:
             # gets two entries
             s = shape_chosen.current()
-            print(s)
             a_p = form_chosen.current()
 
             # all formulas for area
             if s == 1:
-                print("Square")
+                #print("Square")
 
                 #pop('aos.py')
                 if a_p == 1:  #perimeter
-                    print(a_p)
-
-                    print("Perimeter of a Square")
+                    #print("Perimeter of a Square")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     length = sd.askfloat('User Input',
                                          'Enter the WIDTH of square:',
@@ -47,7 +38,7 @@ def find_ap():
                     #enter width
                 else:
                     #area
-                    print("Area of Square")
+                    #print("Area of Square")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     length = sd.askfloat('User Input',
                                          'Enter the WIDTH of square:',
@@ -58,11 +49,10 @@ def find_ap():
                     display_calc_ap(get_rec_square_area(length, height))
                 break
             elif s == 2:
-                print("Circle")
+                #print("Circle")
                 #pop('aoc.py')
                 if a_p == 1:  #perimeter
-                    print(a_p)
-                    print("Perimeter of Circle")
+                    #print("Perimeter of Circle")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     userInput = sd.askfloat('User Input',
                                             'Enter the Radius of circle:',
@@ -72,8 +62,7 @@ def find_ap():
 
                     #area
                     #https://stackoverflow.com/questions/51394482/is-it-possible-to-display-python-input-statements-in-tkinter
-                    print(a_p)
-                    print("Area of Circle")
+                    #print("Area of Circle")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     userInput = sd.askfloat('User Input',
                                             'Enter the Radius of circle:',
@@ -82,14 +71,14 @@ def find_ap():
                     #r=sd.askstring("Enter the Radius of circle: ")
                     #circle_area(r)
                 else:
-                    print("test")
+                    print("Option not available")
                 break
 
             elif s == 3:  #watch indentation Jules - working my side now!
-                print("Triangle")
+                #print("Triangle")
                 if a_p == 1:
 
-                    print("Perimeter of triangle")
+                    #print("Perimeter of triangle")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     length1 = sd.askfloat(
                         'User Input', 'Enter the Bottom value of triangle:',
@@ -104,7 +93,7 @@ def find_ap():
 
                 else:
 
-                    print("Area of Triangle")
+                    #print("Area of Triangle")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     base = sd.askfloat('User Input',
                                        'Enter the WIDTH of triangle:',
@@ -115,10 +104,10 @@ def find_ap():
                     display_calc_ap(get_triangle_area(base, height))
                 break
             elif s == 4:  
-                print("Parallelogram")
+                #print("Parallelogram")
                 if a_p == 2:
 
-                    print("Perimeter of Parallelogram")
+                    #print("Perimeter of Parallelogram")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     length = sd.askfloat(
                         'User Input', 'Enter the LENGTH of parallelogram:',
@@ -130,7 +119,7 @@ def find_ap():
 
                 if a_p == 1:
 
-                    print("Area of Parallelogram")
+                    #print("Area of Parallelogram")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
                     base = sd.askfloat('User Input',
                                        'Enter the LENGTH of parallelogram:',
@@ -144,9 +133,11 @@ def find_ap():
         #pop('aot.py')
 
         except ValueError:
-            print("Goodbye")
+            print("You have inputted a incorrect value")
             break
 
+        except TypeError: 
+            print("You have tried to exit without input")
 
 def display_calc_ap(ap):
     tbox_ap.config(state='normal')
