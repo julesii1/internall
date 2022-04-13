@@ -169,7 +169,7 @@ lb_heading = tk.Label(window,
                       bg="#c7d6f5")
 lb_subheading = tk.Label(window,
                          font=("Arial", 12),
-                         text="Input shape and numbers",
+                         text="Input shape and numbers below!",
                          fg="black",
                          bg="#c7d6f5")
 
@@ -240,12 +240,12 @@ btn_exit = tk.Button(window,
 
 # Placing the elements on the screen
 lb_heading.place(x=180, y=5)
-lb_subheading.place(x=20, y=50)
+lb_subheading.place(x=20, y=70)
 lb_ap.place(x=20, y=150)
 #month
 lb_shape.place(x=20, y=110)
 #e_shape.place(x=120,y=105)
-shape_chosen.place(x=120, y=110)
+shape_chosen.place(x=93, y=110)
 form_chosen.place(x=205, y=150)
 btn_calculate_ap.place(x=30, y=200)
 lb_calculated_ap.place(x=330, y=70)
