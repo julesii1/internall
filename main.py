@@ -235,7 +235,7 @@ lb_calculated_ap = tk.Label(window,
                             bg="#c7d6f5")
 
 tbox_ap = tk.Text(window,
-                  width=3,
+                  width=5,
                   height=0,
                   state="disabled",
                   bg="#99ade6",
@@ -257,6 +257,6 @@ lb_shape.place(x=20, y=110)
 shape_chosen.place(x=120, y=110)
 form_chosen.place(x=205, y=150)
 btn_calculate_ap.place(x=30, y=200)
-lb_calculated_ap.place(x=310, y=70)
+lb_calculated_ap.place(x=330, y=70)
 tbox_ap.place(x=425, y=100)
 btn_exit.place(x=400, y=200)
