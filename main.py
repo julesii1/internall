@@ -26,7 +26,7 @@ def find_ap():
                 #pop('aos.py')
                 if a_p == 1:  #perimeter
                     #print("Perimeter of a Square")
-                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    options = {'minvalue': 0.0, 'maxvalue': 10.0}
                     length = sd.askfloat('User Input',
                                          'Enter the WIDTH of square:',
                                          **options)
@@ -39,7 +39,7 @@ def find_ap():
                 elif a_p == 2:
                     #area
                     #print("Area of Square")
-                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    options = {'minvalue': 0.0, 'maxvalue': 10.0}
                     length = sd.askfloat('User Input',
                                          'Enter the WIDTH of square:',
                                          **options)
@@ -55,7 +55,7 @@ def find_ap():
                 #pop('aoc.py')
                 if a_p == 1:  #perimeter
                     #print("Perimeter of Circle")
-                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    options = {'minvalue': 0.0, 'maxvalue': 10.0}
                     userInput = sd.askfloat('User Input',
                                             'Enter the Radius of circle:',
                                             **options)
@@ -65,7 +65,7 @@ def find_ap():
                     #area
                     #https://stackoverflow.com/questions/51394482/is-it-possible-to-display-python-input-statements-in-tkinter
                     #print("Area of Circle")
-                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    options = {'minvalue': 0.0, 'maxvalue': 10.0}
                     userInput = sd.askfloat('User Input',
                                             'Enter the Radius of circle:',
                                             **options)
@@ -81,7 +81,7 @@ def find_ap():
                 if a_p == 1:
 
                     #print("Perimeter of triangle")
-                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    options = {'minvalue': 0.0, 'maxvalue': 10.0}
                     length1 = sd.askfloat(
                         'User Input', 'Enter the Bottom value of triangle:',
                         **options)
@@ -96,7 +96,7 @@ def find_ap():
                 elif a_p == 2:
 
                     #print("Area of Triangle")
-                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    options = {'minvalue': 0.0, 'maxvalue': 10.0}
                     base = sd.askfloat('User Input',
                                        'Enter the WIDTH of triangle:',
                                        **options)
@@ -112,7 +112,7 @@ def find_ap():
                 if a_p == 2:
 
                     #print("Perimeter of Parallelogram")
-                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    options = {'minvalue': 0.0, 'maxvalue': 10.0}
                     length = sd.askfloat(
                         'User Input', 'Enter the LENGTH of parallelogram:',
                         **options)
@@ -124,7 +124,7 @@ def find_ap():
                 if a_p == 1:
 
                     #print("Area of Parallelogram")
-                    options = {'minvalue': 3.0, 'maxvalue': 10.0}
+                    options = {'minvalue': 0.0, 'maxvalue': 10.0}
                     base = sd.askfloat('User Input',
                                        'Enter the LENGTH of parallelogram:',
                                        **options)
@@ -164,7 +164,7 @@ def exit():
 
 # Creating a custom window
 window = tk.Tk()
-window.geometry("700x400")
+window.geometry("765x400")
 window.config(bg="#B1C6D8")
 window.resizable(width=False, height=False)
 window.title('Area and Perimeter Calculator')
