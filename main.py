@@ -36,7 +36,7 @@ def find_ap():
                     display_calc_ap(get_rec_square_perimeter(length, height))
                     #enter height
                     #enter width
-                else:
+                elif a_p == 2:
                     #area
                     #print("Area of Square")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
@@ -47,6 +47,8 @@ def find_ap():
                                          'Enter the HEIGHT of square:',
                                          **options)
                     display_calc_ap(get_rec_square_area(length, height))
+                else:
+                  print("Please enter an Area or Perimeter")
                 break
             elif s == 2:
                 #print("Circle")
@@ -71,7 +73,7 @@ def find_ap():
                     #r=sd.askstring("Enter the Radius of circle: ")
                     #circle_area(r)
                 else:
-                    print("Option not available")
+                  print("Please enter an Area or Perimeter")
                 break
 
             elif s == 3:  #watch indentation Jules - working my side now!
@@ -91,7 +93,7 @@ def find_ap():
                                          **options)
                     display_calc_ap(get_triangle_perimeter(length1, length2, height))
 
-                else:
+                elif a_p == 2:
 
                     #print("Area of Triangle")
                     options = {'minvalue': 3.0, 'maxvalue': 10.0}
@@ -102,6 +104,8 @@ def find_ap():
                                          'Enter the HEIGHT of triangle:',
                                          **options)
                     display_calc_ap(get_triangle_area(base, height))
+                else:
+                  print("Please enter an Area or Perimeter")
                 break
             elif s == 4:  
                 #print("Parallelogram")
@@ -128,8 +132,12 @@ def find_ap():
                                          'Enter the HEIGHT of parallelogram:',
                                          **options)
                     display_calc_ap(get_rec_parallelogram_area(base, height))
+                else:
+                  print("Please enter an Area or Perimeter")
                 break
-
+            else:
+                  print("Please enter a shape!")
+            break
         #pop('aot.py')
 
         except ValueError:
@@ -157,33 +165,33 @@ def exit():
 # Creating a custom window
 window = tk.Tk()
 window.geometry("700x400")
-window.config(bg="#c7d6f5")
+window.config(bg="#B1C6D8")
 window.resizable(width=False, height=False)
-window.title('Area Perimeter Calculator')
+window.title('Area and Perimeter Calculator')
 
 # Labels for Heading and Subheadng of GUI
 lb_heading = tk.Label(window,
-                      text="Area Perimeter Calculator",
+                      text="Area and Perimeter Calculator",
                       font=("Arial", 20),
                       fg="black",
-                      bg="#c7d6f5")
+                      bg="#B1C6D8")
 lb_subheading = tk.Label(window,
                          font=("Arial", 12),
                          text="Input shape and numbers below!",
                          fg="black",
-                         bg="#c7d6f5")
+                         bg="#B1C6D8")
 
 # Labels for shape, ap
 lb_shape = tk.Label(window,
                     text="Shape: ",
                     font=('Arial', 12, "bold"),
                     fg="#000000",
-                    bg="#c7d6f5")
+                    bg="#B1C6D8")
 lb_ap = tk.Label(window,
                  text="Area Or Perimeter:",
                  font=('Arial', 12, "bold"),
                  fg="#000000",
-                 bg="#c7d6f5")
+                 bg="#B1C6D8")
 
 # Combobox creation
 n = tk.StringVar()
@@ -223,13 +231,13 @@ lb_calculated_ap = tk.Label(window,
                             text="The calculated area/perimeter is",
                             font=('Arial', 12, "bold"),
                             fg="#000000",
-                            bg="#c7d6f5")
+                            bg="#B1C6D8")
 
 tbox_ap = tk.Text(window,
                   width=5,
                   height=0,
                   state="disabled",
-                  bg="#99ade6",
+                  bg="#98AEC1",
                   font=('Arial', 24, "bold"))
 
 # Button to exit application
